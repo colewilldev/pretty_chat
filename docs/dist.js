@@ -1,5 +1,6 @@
 // Copy These lines into the Chrome Dev Tools Console and then type prettify(); to prettify your chat thread!
-
+console.log('You just Loaded the Prettify Script!');
+console.log('Type in prettify(); to run it!');
 function prettify(){
 // Grabs the Chat HTML and returns it
 function test(){
