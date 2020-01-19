@@ -1,0 +1,25 @@
+button{
+  padding: 10px 20px 10px 10px;
+  border-radius:5px;
+  background-color: #F2C0FF;
+  border: none;
+  color: black;
+  font-weight:600;
+  text-align:center;
+}
+button:hover{
+  padding: 10px 20px 8px 10px;
+  border-radius:5px;
+  background-color: white;
+  border: 2px solid salmon;
+  color: black;
+  font-weight:600;
+  text-align:center;
+}
+.code{
+  background-color:black;
+  color:greenyellow;
+  padding:10px;
+  border-radius: 15px;
+  line-height: .5em;
+}
