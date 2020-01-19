@@ -274,5 +274,5 @@ return [].slice.call(document.getElementsByTagName('p')).find(el=>{
         </div>`;
       }
     })
-});
+}
 
