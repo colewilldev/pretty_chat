@@ -10,22 +10,23 @@
 </head>
 
 <body>
-	<h1 id="title">Pretty Chat</h1>
-  <p>Thanks for stopping by pretty chat! To use it you will need to copy these 5 lines of code...
+  <div class="info-section">
+    <div class="row">
+      <h1 id="title">Pretty Chat</h1>
+  <p>Thanks for stopping by pretty chat! To use it you will need to copy these 6 lines of code...
   
   <div class="code">
     <p>var script = document.createElement('script');</p>
     <p>script.type = 'text/javascript';</p>
-    <p>script.src = 'script.js';</p>
+    <p>script.src = 'https://pretty-chat2020.herokuapp.com/dist.js';</p>
     <p>document.head.appendChild(script);</p>
+    <p class="prettify">prettify();</p>
   </div>
-  <p> And paste them into your Chrome Dev Tools Console and hit enter!</p>
-  <p>That's it! It will automatically prettify your chat!</p>
-
- 
-
-  
-
+  <p> And paste them into your <a href="https://developers.google.com/web/tools/chrome-devtools/console#javascript">Chrome Dev Tools Console</a> and hit enter!</p>
+  <p>That's it! It will automatically prettify your chat thread so that they are easy to read!  You can test the output using this Repl, and stye it however you would like!  The css for the chat is at the very bottom of the script.js JavaScript file!</p>
+    </div>
+  </div>
+	
  <button id="prettify">Prettify This Chat!</button>
 
 	<p dir="auto" id="replace">
@@ -79,10 +80,7 @@
     <br>(06:55:47 PM) Henry Wells: ok
     <br>(06:55:51 PM) Henry Wells: thanks
     </p>
-
     
-
-
     <script src="script.js"></script>
   </body>
 </html>

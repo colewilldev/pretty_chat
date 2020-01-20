@@ -1,15 +1,18 @@
+console.log('Prettify Code Loaded!');
+console.log('Type prettify() and hit enter!');
+
 var oldChat = {'innerHTML': document.getElementById('replace').innerHTML};
 
 var button = document.getElementById('prettify');
-button.addEventListener('click',prettifyBTN);
+if(button){button.addEventListener('click',prettifyBTN)};
 
-
+// Toggles the button
 function prettifyBTN(){
   var chatIsUgly;
   if(button.innerText.includes('Prettify')){
     chatIsUgly = false;
     
-    prettifyIt();
+    prettify();
     button.innerText ="Uglify It :( ";
   }else{
     chatIsUgly = true;
@@ -19,39 +22,31 @@ function prettifyBTN(){
   }
 }
 
-function prettifyIt(){
+function prettify(){
   console.log('\n New Run Of Prettify Function');
-// Grabs the Chat HTML and returns it
+// Grabs the Chat HTML and returns it to be used in the function
 function test(){
   return [].slice.call(document.getElementsByTagName('p')).find(e=>{
-    
     if(e.innerHTML.length > 300){
       console.log('Grabbing the Chat!: ', e);
       return e;
     }
   })
   }
+
 // adds the html to the function to prettify
 var chat = test();
 
 console.log('1 chat: ', chat.innerHTML);
   
-  var inputHTML = test().innerHTML;
-// console.log(inputHTML.split('<br>'));
-// console.log('TEXT: ', inputHTML);
-
+var inputHTML = test().innerHTML;
 var arrayOfSentences = inputHTML.split('<br>');
-
-// console.log('Every Sentance of the Chat in an Array: ', arrayOfSentences);
 var rawNameArray =[];
 var eachLine = [];
 var agentName = "";
-// B UILDS EACH SENTENCE
+
+// BUILDS EACH SENTENCE
 arrayOfSentences.forEach((e,i)=>{
-  // Print every line
-	/* console.log(e); */
- 
- 	// console.log(e[0]);
   
   if(e[0]=="("){
     var time = e.slice(1,12);
@@ -104,7 +99,7 @@ for (var i=0; i < eachLine.length; i++){
         'hash':[]
       };
  
-    // see if the name includes numbers
+    // see if the name includes a hash string
     if(el.includes('is now known as')){
       // console.log(el);
 
@@ -120,7 +115,6 @@ for (var i=0; i < eachLine.length; i++){
       }
       // console.log(i,`left: ${leftSide} <--> Right: ${rightSide}`);
       // console.log(i,`left: ${isHash(leftSide)} <--> Right: ${isHash(rightSide)}`);
-      
       // console.log('condition: ', !isHash(leftSide) && isHash(rightSide));
       if(!isHash(leftSide) && isHash(rightSide)){
         nameObj.nameString = leftSide;
@@ -128,11 +122,8 @@ for (var i=0; i < eachLine.length; i++){
       }
       if(isHash(leftSide)&& !isHash(rightSide)){
         nameObj.nameString = rightSide;
-        // console.log('inserting: ', rightSide);
-        
         nameObj.hash.push(leftSide);
       }
-      // console.log('before push: ', nameObj);
       
       if(nameObj.nameString !== "" && nameCheckArray.length < 1){
         nameCheckArray.push(nameObj)
@@ -199,7 +190,6 @@ for (var i=0; i < eachLine.length; i++){
       'css_class': 'agent_' + i
     });
   })
-  // console.log('classObjArr', classObjArr);
 
   eachLine.forEach(line=>{
     classObjArr.find(el=>{
@@ -213,11 +203,9 @@ for (var i=0; i < eachLine.length; i++){
   console.log('Final Chat Objects: ', finalArr);
   var names = [];
   var result = '';
-
-  // Adds the closing </div> tag at the end of the string
   var returnArray = [];
-  // Builds the string that will become the final chat
   
+  // Builds the array that will become the final chat html
   function customerOrAgent(isAgent){
     console.log('inside the function', isAgent);
     if(isAgent){
@@ -232,8 +220,6 @@ for (var i=0; i < eachLine.length; i++){
   }
   
   finalArr.forEach((line, index)=>{
-    // console.log('9898: ', line.isAgent);
-    // console.log('MARK: ',supportAgent(line.isAgent));
     
     var item = `<div class="${line.css_class}">
       ${customerOrAgent(line.isAgent)}
@@ -243,11 +229,10 @@ for (var i=0; i < eachLine.length; i++){
       <span class="clear"></span>
       <span class="index">${index}</span>
     </div>`;
-    returnArray.push(item); 
     
+    returnArray.push(item); 
     })
 
-  // + style
 // Extras for the Final rendered HTML
 var fonts = `<link href="https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro&display=swap" rel="stylesheet">`;
 
@@ -338,17 +323,4 @@ return [].slice.call(document.getElementsByTagName('p')).find(e=>{
             final_HTML_end;
   }
 })
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
+}//prettify()

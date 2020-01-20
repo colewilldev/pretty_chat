@@ -1,3 +1,6 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
 button{
   padding: 10px 20px 10px 10px;
   border-radius:5px;
@@ -22,4 +25,18 @@ button:hover{
   padding:10px;
   border-radius: 15px;
   line-height: .5em;
+  display:inline-block;
+  font-weight:200;
+}
+.code .prettify{
+  color:#F2C0FF;
+  font-weight:600;
+}
+.info-section{
+  background-color:#E3FFF1;
+  padding:20px;
+  margin-bottom:15px;
+}
+.row{
+  max-width: 600px;
 }
